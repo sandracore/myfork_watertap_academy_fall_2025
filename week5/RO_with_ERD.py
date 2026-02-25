@@ -50,7 +50,7 @@ def build():
     # Add feed
     m.fs.feed = Feed(property_package=m.fs.properties)
     # Set feed stream
-    m.fs.feed.properties[0].flow_vol_phase["Liq"].fix(1e-3)
+    m.fs.feed.properties[0].flow_vol_phase["Liq"].fix(1e-3)                                 
     m.fs.feed.properties[0].conc_mass_phase_comp["Liq", "TDS"].fix(35)
     m.fs.feed.properties[0].pressure.fix(101325)
     m.fs.feed.properties[0].temperature.fix(273.15 + 25)
@@ -58,7 +58,7 @@ def build():
     # Add pump
     m.fs.pump = Pump(property_package=m.fs.properties)
     # Set pump parameters
-    m.fs.pump.efficiency_pump.fix(0.80)
+    m.fs.pump.efficiency_pump.fix(0.80)                                                     # I am missing this
     m.fs.pump.control_volume.properties_out[0].pressure.fix(75 * pyunits.bar)
 
     # Add 0D reverse osmosis unit
